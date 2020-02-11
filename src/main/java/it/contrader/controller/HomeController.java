@@ -19,7 +19,8 @@ public class HomeController implements Controller {
 	 */
 	public void doControl(Request request) {
 		if (request != null) {
-			
+			// cx = request.get("status").toString();
+			//if(cx=="1")
 			String username = request.get("username").toString();
 			String password = request.get("password").toString();
 
