@@ -35,7 +35,7 @@ public class SignUpView extends AbstractView {
 		
 		request.put("username", username);
 		request.put("password", password);
-		
+		request.put("cx", 3);
 		MainDispatcher.getInstance().callAction("SignUp", "doControl", request);
 	
 	}

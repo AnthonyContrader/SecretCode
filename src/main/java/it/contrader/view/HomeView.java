@@ -22,7 +22,7 @@ public class HomeView extends AbstractView {
 	     System.out.println("-----.:2 SIGN UP:.----");
 			cx= this.getInput();
 		
-     }
+   }
 
 	@Override
 	public void showResults(Request request) {
@@ -30,20 +30,11 @@ public class HomeView extends AbstractView {
 		
 	}
 
-	public void submit() { //salva cx
-		//request = new Request();
-	    switch (cx){
-        case "1":
-        	//this.request.put("mode", "USERLIST");
-        	MainDispatcher.getInstance().callAction("Login", "doControl", null);
-        	break;
-        case "2":
-	    	   MainDispatcher.getInstance().callView("SignUp", null);
-	    	   
-	    break;
-	    
-	    }
-	    
+	@Override
+	public void submit() {
+		Request request=new Request();
+		request.put("cx", cx);
+		MainDispatcher.getInstance().callAction("SignUp", "doControl", request);
+		
 	}
-    
 }
