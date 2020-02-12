@@ -1,5 +1,7 @@
 package it.contrader.main;
 
+import it.contrader.controller.Request;
+
 /*
  * Ogni applicazione java necessita di una funzione main() 
  * Essa sarà di fatto la prima funzione chiamata dalla JVM, la sua mancanza verrà infatti notata dall'interprete che 
@@ -11,7 +13,12 @@ package it.contrader.main;
 public class Application {
 
     public static void main(String[] args) {
-        MainDispatcher.getInstance().callAction("Login", "doControl", null);
+        Request request = null;
+		MainDispatcher.getInstance().callView("Home", request);
     }
-
 }
+
+
+	
+	
+	
