@@ -6,19 +6,19 @@ import it.contrader.main.MainDispatcher;
 
 public class HomeUserView extends AbstractView{
 
-	String choice;
+	 private String choice;
 
 	@Override
 	public void showResults(Request request) {
-		System.out.println("\n-----Purtroppo in questo sample l'utente non puà fare nulla, ci scusiamo per il disagio.-----");
+		System.out.println("\n-----Purtroppo in questo sample l'utente non puà fare nulla per i team.-----");
 
 	}
-
+// ho modificato le opzioni dell'utente, prima poteva solo tornare al menu login (uscire) ora può aggiornare il suo profilo
 	@Override
 	public void showOptions() {
 		System.out.println("-------------MENU------------\n");
-		System.out.println("NESSUNA OPZIONE DISPONIBILE!");
-		System.out.println("\n Esatto, puoi solo uscire...");
+		System.out.println("------.:Devi ricevere una richiesta per entrare nel team:.------");
+		System.out.println("-----:.e Esci:.------");
 		choice = this.getInput();
 
 	}
@@ -31,9 +31,10 @@ public class HomeUserView extends AbstractView{
 		case "e":
 			MainDispatcher.getInstance().callAction("Login", "doControl", null);
 			break;
-
-		default:
+		default :
 			MainDispatcher.getInstance().callAction("Login", "doControl", null);
+			break;
+		
 		}
 	}
 
