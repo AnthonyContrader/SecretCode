@@ -90,7 +90,7 @@ public class ProjectController implements Controller {
 			break;
 			
 		case "I":
-			MainDispatcher.getInstance().callView(subPack + "ProjectInsert", null);
+			MainDispatcher.getInstance().callView(subPack + "ProjectCreate", null);
 			break;
 			
 		case "M":
@@ -117,6 +117,6 @@ public class ProjectController implements Controller {
 	private void listMode(Request request) {
 		List<ProjectDTO> projectDTO = projectService.getAll();
 		request.put("projects", projectDTO);
-		MainDispatcher.getInstance().callView("Project", request);
+		MainDispatcher.getInstance().callView("ProjectManage", request);
 	}
 }

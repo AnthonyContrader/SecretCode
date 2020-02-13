@@ -1,33 +1,34 @@
 package it.contrader.view.project;
 
 import it.contrader.controller.Request;
-import it.contrader.dto.ProjectDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.AbstractView;
 //Salvo Furnari
-public class ProjectReadView extends AbstractView {
+public class ProjectDeleteView extends AbstractView {
 	//Props
-	private int id;
 	private Request request;
-	private final String mode = "READ";
-	//Constructor
-	public ProjectReadView() {}
+
+	private int id;
+	private final String mode = "DELETE";
+
+	public ProjectDeleteView() { }
+	
 	//Show res
 	@Override
 	public void showResults(Request request) {
-		if (request != null) {
-			ProjectDTO user = (ProjectDTO) request.get("project");
-			System.out.println(user);
+		if (request!=null) {
+			System.out.println("Cancellazione andata a buon fine.\n");
 			MainDispatcher.getInstance().callView("Project", null);
 		}
 	}
-	//SHow opt
+	//Show opt
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci l'Id progetto:");
-		id = Integer.parseInt(getInput());
+			System.out.println("Inserisci id progetto:");
+			id = Integer.parseInt(getInput());
+
 	}
-	//Req send
+	//Submit
 	@Override
 	public void submit() {
 		request = new Request();
