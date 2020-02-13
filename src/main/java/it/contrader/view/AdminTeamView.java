@@ -12,7 +12,7 @@ public class AdminTeamView extends  AbstractView {
 	 public void showOptions() {
 	        System.out.println("-------------MENU------------\n");
 	        System.out.println(" Seleziona cosa vuoi fare con i Team:");
-	        System.out.println("[N]Crea nuovo Team [M]Modifica Team [C]Cancella Team [V]Visualizza [E]Esci");
+	        System.out.println("[N]Crea nuovo Team [M]Modifica Team(nome e inserisci) [C]Cancella Team [V]Visualizza [E]Esci");
 	       
 	        choice = this.getInput();
 	 }
@@ -21,7 +21,7 @@ public class AdminTeamView extends  AbstractView {
 	        switch (choice) {
 	           case "n":
 	        	   this.request.put("mode", "teamList"); //Barbara:questo manda la richiesta al converter di Randi
-	        	   MainDispatcher.getInstance().callAction("Team","doConvert", request);// andrà collegata alla query di insert
+	        	   MainDispatcher.getInstance().callView("NewTeam", null);// andrà collegata alla query di insert
 	        	   break;
 	           case "m":
 	        	   this.request.put("mode", "teamList"); //Barbara:questo manda la richiesta al converter di Randi
