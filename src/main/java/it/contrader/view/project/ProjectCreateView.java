@@ -25,12 +25,12 @@ public class ProjectCreateView extends AbstractView{
 	//Show
 	@Override
 	public void showOptions() {
-			System.out.println("Inserisci nome progetto:");
-			name = getInput();
-			System.out.println("Inserisci url progetto:");
-			url = getInput();
-			System.out.println("Inserisci descrizione progetto:");
-			description = getInput();
+		System.out.println("Inserisci nome progetto:");
+		name = getInput();
+		System.out.println("Inserisci url progetto:");
+		url = getInput();
+		System.out.println("Inserisci descrizione progetto:");
+		description = getInput();
 	}
 	//Submit
 	@Override

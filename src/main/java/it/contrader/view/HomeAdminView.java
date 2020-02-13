@@ -58,7 +58,7 @@ public class HomeAdminView extends AbstractView {
         	MainDispatcher.getInstance().callView("AdminTeam", null);//Barbara:View che si collega ai team Randi
         	break;
         case "p":
-        	MainDispatcher.getInstance().callView("Project", null);//Barbara:View che si collega al projetto Salvo
+        	MainDispatcher.getInstance().callView("ProjectManage", null);//Barbara:View che si collega al projetto Salvo
         	break;
         default:
         	 request.put("choice", choice);
