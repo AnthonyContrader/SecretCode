@@ -10,7 +10,10 @@ import it.contrader.service.NewTeamService;
 
  public class NewTeamDAO {
 	 private String QUERY_INSERT = "INSERT INTO utentiteam(idteam, iduser, usertype ) VALUES (?,?,?)";
-		public boolean newTeam(NewTeamModel us) {
+	 private String QUERY_DELETE = "DELETE FROM utentiteam WHERE iduser=? AND idteam=?";
+	 private String QUERY_READ = "INSERT INTO utentiteam(idteam, iduser, usertype ) VALUES (?,?,?)";
+	 private String QUERY_UP = "INSERT INTO utentiteam(idteam, iduser, usertype ) VALUES (?,?,?)";
+	 public boolean newTeam(NewTeamModel us) {
 			Connection connection = ConnectionSingleton.getInstance();
 			try {	
 				//System.out.println(us.toString());
