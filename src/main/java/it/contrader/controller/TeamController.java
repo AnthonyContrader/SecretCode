@@ -29,7 +29,7 @@ public class TeamController {
 		int id;
 		String nometeam;
 		String descrizione;
-		String numeroutenti;
+		int numeroutenti;
 		
 		
 		switch (mode) {
@@ -39,13 +39,13 @@ public class TeamController {
 			id = Integer.parseInt(request.get("id").toString());
 			TeamDTO teamDTO = teamService.read(id);
 			request.put("team", teamDTO);
-			MainDispatcher.getInstance().callView(sub_package + "teamRead", request);
+			MainDispatcher.getInstance().callView(sub_package + "TeamRead", request);
 			break;
 		
 		case "INSERT":
 			nometeam = request.get("nometeam").toString();
 			descrizione = request.get("descrizione").toString();
-			numeroutenti = request.get("numeroutenti").toString();
+			numeroutenti = Integer.parseInt(request.get("numeroutenti").toString());
 			
 			TeamDTO teamtoinsert = new TeamDTO(nometeam, descrizione, numeroutenti);
 			
@@ -69,7 +69,7 @@ public class TeamController {
 			id = Integer.parseInt(request.get("id").toString());
 			nometeam = request.get("nometeam").toString();
 			descrizione = request.get("descrizione").toString();
-			numeroutenti = request.get("numeroutenti").toString();
+			numeroutenti = Integer.parseInt(request.get("numeroutenti").toString());
 			TeamDTO teamtoupdate = new TeamDTO(nometeam, descrizione, numeroutenti);
 			teamtoupdate.setId(id);
 			teamService.update(teamtoupdate);
@@ -82,7 +82,7 @@ public class TeamController {
 		case "USERLIST":
 			List<TeamDTO> teamsDTO = teamService.getAll();
 			
-			request.put("team", teamsDTO);
+			request.put("teams", teamsDTO);
 			MainDispatcher.getInstance().callView("Team", request);
 			break;
 			
@@ -92,7 +92,7 @@ public class TeamController {
 			
 			switch (choice.toUpperCase()) {
 				case "L":
-					MainDispatcher.getInstance().callView(sub_package + "Teamread", null);
+					MainDispatcher.getInstance().callView(sub_package + "TeamRead", null);
 					break;
 					
 				case "I":

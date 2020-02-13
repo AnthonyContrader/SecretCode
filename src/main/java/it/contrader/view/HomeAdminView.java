@@ -34,7 +34,7 @@ public class HomeAdminView extends AbstractView {
     public void showOptions() {
         System.out.println("-------------MENU------------\n");
         System.out.println(" Seleziona cosa vuoi gestire:");
-        System.out.println("[U]tenti [T]team [P]Progetti [E]Esci");
+        System.out.println("[U]tenti [T]team [A]Gestione utenti [P]Progetti [E]Esci");
         //Il metodo che salva l'input nella stringa choice.
         //getInput() è definito in AbstractView.
         choice = this.getInput();
@@ -48,17 +48,19 @@ public class HomeAdminView extends AbstractView {
     	request = new Request();
         switch (choice) {
         case "u":
-        	this.request.put("mode", "USERLIST");
         	MainDispatcher.getInstance().callAction("User", "doControl", request);
         	break;
         case "e":
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
         	break;
         case "t":
+        	MainDispatcher.getInstance().callView("TeamView", null);//
+        	break;
+        case "a":
         	MainDispatcher.getInstance().callView("AdminTeam", null);//Barbara:View che si collega ai team Randi
         	break;
         case "p":
-        	MainDispatcher.getInstance().callView("Project", null);//Barbara:View che si collega al projetto Salvo
+        	MainDispatcher.getInstance().callView("ProjectManage", null);//Barbara:View che si collega al projetto Salvo
         	break;
         default:
         	 request.put("choice", choice);

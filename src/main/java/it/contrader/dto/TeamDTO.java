@@ -8,20 +8,20 @@ public class TeamDTO {
 
 	private String descrizione;
 
-	private String numeroutenti;
+	private int numeroutenti;
 	
 	public TeamDTO( ) {
 		
 	}
 
-	public TeamDTO (String nometeam, String descrizione, String numeroutenti) {
+	public TeamDTO (String nometeam, String descrizione, int numeroutenti) {
 	this.nometeam =	nometeam;
 	this.descrizione = descrizione;
 	this.numeroutenti = numeroutenti;
 		
 	}
 	
-	public TeamDTO (int id, String nometeam, String descrizione, String numeroutenti) {
+	public TeamDTO (int id, String nometeam, String descrizione, int numeroutenti) {
 	this.id = id;
 	this.nometeam = nometeam;
 	this.descrizione = descrizione;
@@ -55,11 +55,11 @@ public class TeamDTO {
 		this.descrizione = descrizione;
 	}
 	
-	public String getNumeroutenti() {
-		return this.descrizione;
+	public int getNumeroutenti() {
+		return this.numeroutenti;
 	}
 	
-	public void setNumeroutenti( String numeroutenti ) {
+	public void setNumeroutenti( int numeroutenti ) {
 		this.numeroutenti = numeroutenti;
 	}
 	
