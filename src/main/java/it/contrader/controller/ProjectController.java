@@ -57,7 +57,7 @@ public class ProjectController implements Controller {
 	}
 	//Update
 	private void updateMode(Request request) {
-		int id = Integer.parseInt(request.get("id").toString());
+		int id = Integer.parseInt(request.get("id")	   .toString());
 		String name 	   = request.get("name")	   .toString();
 		String url  	   = request.get("url")		   .toString();
 		String description = request.get("description").toString();

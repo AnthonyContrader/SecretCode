@@ -9,13 +9,13 @@ import it.contrader.model.NewTeamModel;
 public class NewTeamConverter   {
 	
 	public NewTeamDTO toDTO(NewTeamModel newTeamModel ) {
-		NewTeamDTO newTeamDTO = new NewTeamDTO(newTeamModel.getIduser(),  newTeamModel.getUsertype(), newTeamModel.getIdteam());
+		NewTeamDTO newTeamDTO = new NewTeamDTO(newTeamModel.getIdteam(), newTeamModel.getIduser() , newTeamModel.getUsertype());
 		return newTeamDTO;
 	}
 
 
 	public NewTeamModel toEntity(NewTeamDTO newTeamDTO) {
-		NewTeamModel newTeamModel = new NewTeamModel(newTeamDTO.getIduser(), newTeamDTO.getUsertype(), newTeamDTO.getIdteam());
+		NewTeamModel newTeamModel = new NewTeamModel(newTeamDTO.getIduser(), newTeamDTO.getIdteam(), newTeamDTO.getUsertype());
 		return newTeamModel;
 	}
 	
@@ -31,3 +31,4 @@ public class NewTeamConverter   {
 	
 	
 }
+
