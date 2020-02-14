@@ -6,7 +6,7 @@ import it.contrader.dto.TeamDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.TeamService;
 
-public class TeamController {
+public class TeamController implements Controller {
 	
 	private static String sub_package = "team.";
 	
@@ -33,14 +33,14 @@ public class TeamController {
 		String descrizione;
 		int numeroutenti;
 		
-		
-		switch (mode) {
+		switch (mode.toUpperCase()) {
 		
 		
 		case "READ":
 			id = Integer.parseInt(request.get("id").toString());
 			TeamDTO teamDTO = teamService.read(id);
 			request.put("team", teamDTO);
+			
 			MainDispatcher.getInstance().callView(sub_package + "TeamRead", request);
 			break;
 		

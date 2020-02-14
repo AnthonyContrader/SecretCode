@@ -16,7 +16,9 @@ public class TeamReadView extends AbstractView {
 	
 	public void showResults(Request request) {
 		if (request != null) {
-			System.out.println("la Visualizzazione e andata a buon fine \n ");
+			String res = request.get("team").toString();
+			System.out.println(res);
+			
 			MainDispatcher.getInstance().callView("Team", null);
 		}
 	}

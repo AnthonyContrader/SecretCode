@@ -27,17 +27,8 @@ public class TeamView extends AbstractView {
 	 */
 	@Override
 	public void showResults(Request request) {
-		if (request != null) {
-			System.out.println("\n------------------- Gestione teams ----------------\n");
-			System.out.println("ID\tNome Team\tDescrizione\tNumero Utenti");
-			System.out.println("----------------------------------------------------\n");
+		if (request != null) {}
 			
-			@SuppressWarnings("unchecked")
-			List<TeamDTO> teams = (List<TeamDTO>) request.get("teams");
-			for (TeamDTO t: teams)
-				System.out.println(t);
-			System.out.println();
-		}
 	}
 
 	/**
