@@ -18,7 +18,7 @@ public class ProjectDeleteView extends AbstractView {
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Cancellazione andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("Project", null);
+			MainDispatcher.getInstance().callView("ProjectManage", null);
 		}
 	}
 	//Show opt
