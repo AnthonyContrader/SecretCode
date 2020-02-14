@@ -54,7 +54,7 @@ public class HomeAdminView extends AbstractView {
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
         	break;
         case "t":
-        	MainDispatcher.getInstance().callView("TeamView", null);//
+        	MainDispatcher.getInstance().callView("Team", null);//
         	break;
         case "a":
         	MainDispatcher.getInstance().callView("AdminTeam", null);//Barbara:View che si collega ai team Randi

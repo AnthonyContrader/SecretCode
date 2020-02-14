@@ -8,7 +8,7 @@ import it.contrader.service.TeamService;
 
 public class TeamController {
 	
-	private static String sub_package = "team";
+	private static String sub_package = "team.";
 	
 	private TeamService teamService;
 	
@@ -22,9 +22,11 @@ public class TeamController {
 	
 	
 	public void doControl(Request request) {
+		
 		String mode = (String) request.get("mode");
 		
 		String choice = (String) request.get("choice");
+
 		
 		int id;
 		String nometeam;
@@ -79,7 +81,7 @@ public class TeamController {
 			break;
 			
 			
-		case "USERLIST":
+		case "TEAMLIST":
 			List<TeamDTO> teamsDTO = teamService.getAll();
 			
 			request.put("teams", teamsDTO);
