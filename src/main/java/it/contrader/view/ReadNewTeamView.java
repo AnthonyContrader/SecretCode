@@ -9,6 +9,11 @@ public class ReadNewTeamView extends AbstractView {
 
      
 	public void showResults(Request request) {
+		if(request !=null) {
+			String a=request.get("utentiteam").toString();
+			System.out.println(a);
+			MainDispatcher.getInstance().callView("AdminTeam", null);
+		}
 	}
 
 	public void showOptions() {

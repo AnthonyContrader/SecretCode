@@ -8,6 +8,13 @@ public class DeleteNewTeamView extends AbstractView {
 	private String idteam;
      
 	public void showResults(Request request) {
+		if (request !=null) {
+		 boolean res=(boolean)(request.get("res"));
+		  if (res)
+			  System.out.println("user deleted");
+		  else System.out.println("users not found");
+			MainDispatcher.getInstance().callView("AdminTeam", null);
+		}
 	}
 
 	public void showOptions() {

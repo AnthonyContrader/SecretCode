@@ -10,6 +10,13 @@ public class MTeamView extends AbstractView {
 	private String usertype;
      
 	public void showResults(Request request) {
+		if (request !=null) {
+			 boolean mod=(boolean)(request.get("mod"));
+			  if (mod)
+				  System.out.println("user uploaded");
+			  else System.out.println("users not found");
+		MainDispatcher.getInstance().callView("AdminTeam", null);
+		}
 	}
 
 	public void showOptions() {
