@@ -1,3 +1,4 @@
+
 package it.contrader.view;
 
 import it.contrader.controller.Request;
@@ -47,4 +48,3 @@ public class InsNewTeamView extends AbstractView {
 
 	
 }
-

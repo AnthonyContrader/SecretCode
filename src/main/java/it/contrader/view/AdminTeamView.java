@@ -53,5 +53,4 @@ public class AdminTeamView extends  AbstractView {
 				// TODO Auto-generated method stub
 				
 			}
-
 }

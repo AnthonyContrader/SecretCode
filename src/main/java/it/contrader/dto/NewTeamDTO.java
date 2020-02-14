@@ -1,3 +1,4 @@
+
 package it.contrader.dto;
 public class NewTeamDTO {
 	
@@ -35,4 +36,5 @@ public class NewTeamDTO {
 	public String toString() {
 		return  idteam + "\t"  + iduser +"\t\t" +  usertype;
 	}
+
 }

@@ -1,3 +1,4 @@
+
 package it.contrader.model;
 public class NewTeamModel {
 	
@@ -41,4 +42,5 @@ public class NewTeamModel {
 		return  idteam + "\t"  + iduser +"\t\t" +  usertype;
 	}
 }
+
 

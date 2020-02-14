@@ -1,4 +1,6 @@
 package it.contrader.view;
+
+
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 
@@ -24,7 +26,7 @@ public class HomeAdminView extends AbstractView {
     public void showOptions() {
         System.out.println("-------------MENU------------\n");
         System.out.println(" Seleziona cosa vuoi gestire:");
-        System.out.println("[U]tenti [t]Gestioneutenti team [P]Progetti [E]Esci");
+        System.out.println("[U]tenti [T]team [A]Gestione utenti [P]Progetti [E]Esci");
         //Il metodo che salva l'input nella stringa choice.
         //getInput() è definito in AbstractView.
         choice = this.getInput();
@@ -45,7 +47,10 @@ public class HomeAdminView extends AbstractView {
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
         	break;
         case "t":
-        	MainDispatcher.getInstance().callView("AdminTeam", null);//Barbara:View che si collega al mio
+        	MainDispatcher.getInstance().callView("Team", null);//
+        	break;
+        case "a":
+        	MainDispatcher.getInstance().callView("AdminTeam", null);//Barbara:View che si collega ai team Randi
         	break;
         case "p":
         	MainDispatcher.getInstance().callView("ProjectManage", null);//Barbara:View che si collega al projetto Salvo

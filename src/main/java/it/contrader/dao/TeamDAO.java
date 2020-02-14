@@ -11,7 +11,7 @@ public class TeamDAO {
 		private final String QUERY_ALL = "SELECT * FROM team";
 		private final String QUERY_CREATE = "INSERT INTO team (nometeam, descrizione, numeroutenti) VALUE (?,?,?)";
 		private final String QUERY_READ = "SELECT * FROM team WHERE id=?";
-		private final String QUERY_UPDATE = "UPDATE team SET nometeam=?, descrizione=?";
+		private final String QUERY_UPDATE = "UPDATE team SET nometeam=?, descrizione=?,numeroutenti=? where id=?";
 		private final String QUERY_DELETE = "DELETE FROM team WHERE od=?";
 		
 		public TeamDAO() {
@@ -29,7 +29,7 @@ public class TeamDAO {
 					int id = resultSet.getInt("id");
 					String nometeam = resultSet.getString("nometeam");
 					String descrizione = resultSet.getString("descrizione");
-					String numeroutenti = resultSet.getString("numeroutenti");
+					int numeroutenti = resultSet.getInt("numeroutenti");
 					team = new Team(nometeam, descrizione, numeroutenti);
 					team.setId(id);
 					teamList.add(team);
@@ -46,7 +46,7 @@ public class TeamDAO {
 				PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 				preparedStatement.setString(1, teamToInsert.getNometeam());
 				preparedStatement.setString(2, teamToInsert.getDescrizione());
-				preparedStatement.setString(3, teamToInsert.getNumeroutenti());
+				preparedStatement.setInt(3, teamToInsert.getNumeroutenti());
 				preparedStatement.execute();
 				return true;
 			}catch (SQLException e) {
@@ -63,11 +63,12 @@ public class TeamDAO {
 					preparedStatement.setInt(1, teamId);
 					ResultSet resultSet = preparedStatement.executeQuery();
 					resultSet.next();
-					String nometeam, descrizione, numeroutenti;
+					String nometeam, descrizione;
+					int numeroutenti;
 			
 					nometeam = resultSet.getString("nometeam");
 					descrizione = resultSet.getString("descrizione");
-					numeroutenti = resultSet.getString("numeroutenti");
+					numeroutenti = resultSet.getInt("numeroutenti");
 					Team team = new Team(nometeam, descrizione, numeroutenti);
 					team.setId(resultSet.getInt("id"));
 					
@@ -95,14 +96,14 @@ public class TeamDAO {
 						teamToUpdate.setDescrizione(teamRead.getDescrizione());
 					}
 					
-					if(teamToUpdate.getNumeroutenti() == null || teamToUpdate.getNumeroutenti().equals("")) {
+					if(teamToUpdate.getNumeroutenti() == 0) {
 					   teamToUpdate.setNumeroutenti(teamRead.getNumeroutenti());
 					}
 					
 					PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 					preparedStatement.setString(1, teamToUpdate.getNometeam());
 					preparedStatement.setString(2, teamToUpdate.getDescrizione());
-					preparedStatement.setString(3, teamToUpdate.getNumeroutenti());
+					preparedStatement.setInt(3, teamToUpdate.getNumeroutenti());
 					preparedStatement.setInt(4, teamToUpdate.getId());
 					int a = preparedStatement.executeUpdate();
 					if (a > 0)
