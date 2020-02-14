@@ -53,7 +53,7 @@ public class ProjectController implements Controller {
 		request = new Request();
 		request.put("mode", "mode");
 		
-		MainDispatcher.getInstance().callView(subPack + "ProjectInsert", request);
+		MainDispatcher.getInstance().callView(subPack + "ProjectCreate", request);
 	}
 	//Update
 	private void updateMode(Request request) {
@@ -65,9 +65,8 @@ public class ProjectController implements Controller {
 		ProjectDTO projectDTO = new ProjectDTO(name, url, description);
 		
 		projectDTO.setId(id);
-		projectService.update(projectDTO);
 		request = new Request();
-		request.put("mode", "mode");
+		request.put("mode", projectService.update(projectDTO));
 		MainDispatcher.getInstance().callView(subPack + "ProjectUpdate", request);
 	}
 	//Delete
@@ -75,7 +74,7 @@ public class ProjectController implements Controller {
 		int id = Integer.parseInt(request.get("id").toString());
 		projectService.delete(id);
 		request = new Request();
-		request.put("mode", "mode");
+		request.put("mode", projectService.delete(id));
 		MainDispatcher.getInstance().callView(subPack + "ProjectDelete", request);
 	}
 	//ReqHandler
