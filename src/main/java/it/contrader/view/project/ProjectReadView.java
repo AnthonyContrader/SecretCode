@@ -18,7 +18,7 @@ public class ProjectReadView extends AbstractView {
 		if (request != null) {
 			ProjectDTO user = (ProjectDTO) request.get("project");
 			System.out.println(user);
-			MainDispatcher.getInstance().callView("Project", null);
+			MainDispatcher.getInstance().callView("ProjectManage", null);
 		}
 	}
 	//SHow opt

@@ -18,8 +18,9 @@ public class ProjectCreateView extends AbstractView{
 	@Override
 	public void showResults(Request request) {
 		if (request!=null) {
+			
 			System.out.println("Inserito.\n");
-			MainDispatcher.getInstance().callView("Project", null);
+			MainDispatcher.getInstance().callView("ProjectManage", null);
 		}
 	}
 	//Show
