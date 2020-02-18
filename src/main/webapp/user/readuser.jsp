@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
+<link href="css/salvatorestyle.css" rel="stylesheet">
 <title>Read User</title>
 </head>
 <body>
-<%@ include file="../css/header.jsp" %>
+<%@ include file="/css/header.jsp" %>
 <div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active"  href="UserServlet?mode=userlist">Users</a>
+  <a href="homeadmin.jsp" class="active">Home</a>
+  <a href="UserServlet?mode=userlist">Users</a> 
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
@@ -51,6 +51,6 @@
 
 </div>
 
-<%@ include file="../css/footer.jsp" %>
+<%@ include file="/css/footer.jsp" %>
 </body>
 </html>

@@ -7,7 +7,8 @@
 </head>
 <body>
 <div class="footer">
-Stuff about copyright, legal notes and other useless informations...
+ 	Stuff about copyright, legal notes and other useless informations... &copy; 2020
 </div>
+
 </body>
 </html>

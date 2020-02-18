@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" 
 	import="java.util.List"
-	import="it.contrader.dto.UserDTO"%>
+	import="it.contrader.dto.ProjectDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,29 +19,28 @@
 </div>
 <div class="main">
 	<%
-		List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
+		List<ProjectDTO> list = (List<ProjectDTO>) request.getAttribute("projects");
 	%>
 
 <br>
 
 	<table>
 		<tr>
-			<th>Username</th>
-			<th>Password</th>
-			<th>Usertype</th>
-			<th>Action</th>
+			<th>Name</th>
+			<th>Url</th>
+			<th>Description</th>
 		</tr>
 		<%
-			for (UserDTO u : list) {
+			for (ProjectDTO u : list) {
 		%>
 		<tr>
-			<td><a href=UserServlet?mode=read&id=<%=u.getId()%>>
-					<%=u.getUsername()%>
+			<td><a href=ProjectManagerServlet?mode=read&id=<%=u.getId()%>>
+					<%=u.getName()%>
 			</a></td>
-			<td><%=u.getPassword()%></td>
-			<td><%=u.getUsertype()%></td>
-			<td><a class="edit" href=UserServlet?mode=read&update=true&id=<%=u.getId()%>></a>&nbsp;&nbsp;<!-- Blank fields -->
-				<a class="delete" href=UserServlet?mode=delete&id=<%=u.getId()%>></a>	<!-- Icon links within themed actions  -->
+			<td><%=u.getUrl()%></td>
+			<td><%=u.getDescription()%></td>
+			<td><a class="edit" href=ProjectManagerServlet?mode=read&update=true&id=<%=u.getId()%>></a>&nbsp;&nbsp;<!-- Blank fields -->
+				<a class="delete" href=ProjectManagerServlet?mode=delete&id=<%=u.getId()%>></a>	<!-- Icon links within themed actions  -->
 			</td>
 
 		</tr>
@@ -52,10 +51,10 @@
 
 
 
-<form id="floatright" action="UserServlet?mode=insert" method="post">
+<form id="floatright" action="ProjectManagerServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="user">Username</label>
+      <label for="user">url</label>
     </div>
     <div class="col-75">
       <input type="text" id="user" name="username" placeholder="Insert username" required style="width: 90%;">
@@ -63,24 +62,11 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="pass">Password</label>
+     <label for="pass">description</label>
     </div>
     <div class="col-75">
       <input type="text" id="pass" name="password" placeholder="Insert password" required style="width: 90%;"> 
     </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="type">Usertype</label>
-    </div>
-   		 <div class="col-75">
- 			<select id="type" name="usertype">
- 				<option value="" disabled selected>Select Usertype</option>
-  				<option value="ADMIN">ADMIN</option>
-  				<option value="USER">USER</option>
- 
-			</select>
-    	</div>
   </div>
       <button type="submit" >Insert</button>
 </form>

@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final HttpSession session = request.getSession();
 		session.setAttribute("utente", null);
+		session.setMaxInactiveInterval(600);
 
 		LoginService service = new LoginService();
 
@@ -37,10 +38,12 @@ public class LoginServlet extends HttpServlet {
 			if (dto != null)
 				//se il login ha funzionato, salva l'utente nella sessione
 				session.setAttribute("user", dto);
-			else
+			else {
 				//altrimenti torna alla pagina di login
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-			
+				
+			}
+			session.setAttribute("user", dto);
 			//esegue una switch cae in base allo usertype per il reindirizzamento
 			switch (dto.getUsertype().toUpperCase()) {
 			case "ADMIN":
@@ -50,6 +53,10 @@ public class LoginServlet extends HttpServlet {
 				
 			case "USER":
 				getServletContext().getRequestDispatcher("/homeadmin.jsp").forward(request, response);
+				break;
+				
+			case "-":
+				getServletContext().getRequestDispatcher("/index.jsp?cred=1").forward(request, response);
 				break;
 				
 			default:

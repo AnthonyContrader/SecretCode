@@ -2,12 +2,12 @@ package it.contrader.dao;
 
 import java.sql.Connection;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import it.contrader.utils.ConnectionSingleton;
+
 import it.contrader.model.User;
+import it.contrader.utils.ConnectionSingleton;
 
 /**
  * 
@@ -29,20 +29,22 @@ public class LoginDAO {
 			statement.setString(1, username);
 			statement.setString(2, password);
 
+			User user = null;
 			
 			ResultSet resultSet;
 			
 			if(statement.executeQuery().next()) {
 				resultSet = statement.executeQuery();
 				resultSet.next();
-				String usertype = resultSet.getString("usertype");
-				int id = resultSet.getInt("id");
-				User user = new User(id, username, password, usertype);
-				
-				return user;
+				user = new User(
+					resultSet.getInt("id"), 
+					username, 
+					password, 
+					resultSet.getString("usertype")
+				);
 			}
 
-			return null;
+			return user;
 		}
 		
 		catch (SQLException e) {

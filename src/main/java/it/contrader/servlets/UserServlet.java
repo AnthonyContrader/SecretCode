@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.UserDTO;
-import it.contrader.service.Service;
 import it.contrader.service.UserService;
 
 /*
@@ -23,19 +22,19 @@ public class UserServlet extends HttpServlet {
 	}
 	
 	public void updateList(HttpServletRequest request) {
-		Service<UserDTO> service = new UserService();
+		UserService service = new UserService();
 		List<UserDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
 	}
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Service<UserDTO> service = new UserService();
+		UserService service = new UserService();
 		String mode = request.getParameter("mode");
 		UserDTO dto;
 		int id;
 		boolean ans;
-
+		
 		switch (mode.toUpperCase()) {
 
 		case "USERLIST":
