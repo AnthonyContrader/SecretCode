@@ -1,37 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.TeamDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="css/salvatorestyle.css" rel="stylesheet">
-<title>Read User</title>
+<title>read Team</title>
 </head>
 <body>
 <%@ include file="/css/header.jsp" %>
 <div class="navbar">
   <a href="homeadmin.jsp" class="active">Home</a>
-  <a href="UserServlet?mode=userlist" class="active">Users</a> 
-  <a href="TeamServlet?mode=teamlist">Teams</a>
-  <a href="SecuritypatternServlet?mode=securitypatternlist">Securitypatterns</a>
+  <a href="UserServlet?mode=userlist">Users</a> 
+  <a href="TeamServlet?mode=teamlist" class="active">Teams</a>
+  <a href="SecuritypatternServlet?mode=securitypatternlist" class="">Securitypatterns</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
 
 <div class="main">
-<%UserDTO u = (UserDTO) request.getAttribute("dto");%>
+<%TeamDTO t = (TeamDTO) request.getAttribute("dto");%>
 
 
 <table>
 	<tr> 
-		<th>Username</th>
-		<th>Password</th>
-		<th>Usertype</th>
+		<th>Nometeam</th>
+		<th>Descrizione</th>
+		<th>Numeroutenti</th>
 	</tr>
 	<tr>
-		<td><%=u.getUsername()%></td>
-		<td> <%=u.getPassword()%></td>
-		<td> <%=u.getUsertype()%></td>
+		<td><%=t.getNometeam()%></td>
+		<td> <%=t.getDescrizione()%></td>
+		<td> <%=t.getNumeroutenti()%></td>
 	</tr>	
 </table>
 

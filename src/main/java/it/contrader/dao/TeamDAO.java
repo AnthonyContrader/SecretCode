@@ -3,7 +3,6 @@ package it.contrader.dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import it.contrader.utils.ConnectionSingleton;
 import it.contrader.model.Team;
 
@@ -12,7 +11,7 @@ public class TeamDAO {
 		private final String QUERY_CREATE = "INSERT INTO team (nometeam, descrizione, numeroutenti) VALUE (?,?,?)";
 		private final String QUERY_READ = "SELECT * FROM team WHERE id=?";
 		private final String QUERY_UPDATE = "UPDATE team SET nometeam=?, descrizione=?,numeroutenti=? where id=?";
-		private final String QUERY_DELETE = "DELETE FROM team WHERE od=?";
+		private final String QUERY_DELETE = "DELETE FROM team WHERE id=?";
 		
 		public TeamDAO() {
 			
@@ -29,7 +28,7 @@ public class TeamDAO {
 					int id = resultSet.getInt("id");
 					String nometeam = resultSet.getString("nometeam");
 					String descrizione = resultSet.getString("descrizione");
-					int numeroutenti = resultSet.getInt("numeroutenti");
+					String numeroutenti = resultSet.getString("numeroutenti");
 					team = new Team(nometeam, descrizione, numeroutenti);
 					team.setId(id);
 					teamList.add(team);
@@ -46,7 +45,7 @@ public class TeamDAO {
 				PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 				preparedStatement.setString(1, teamToInsert.getNometeam());
 				preparedStatement.setString(2, teamToInsert.getDescrizione());
-				preparedStatement.setInt(3, teamToInsert.getNumeroutenti());
+				preparedStatement.setString(3, teamToInsert.getNumeroutenti());
 				preparedStatement.execute();
 				return true;
 			}catch (SQLException e) {
@@ -55,20 +54,19 @@ public class TeamDAO {
 			}
 			
 			
-			public Team read(int teamId) {
+			public Team read(int Id) {
 				Connection connection = ConnectionSingleton.getInstance();
 				try {
 	
 					PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-					preparedStatement.setInt(1, teamId);
+					preparedStatement.setInt(1, Id);
 					ResultSet resultSet = preparedStatement.executeQuery();
 					resultSet.next();
-					String nometeam, descrizione;
-					int numeroutenti;
+					String nometeam, descrizione, numeroutenti;
 			
 					nometeam = resultSet.getString("nometeam");
 					descrizione = resultSet.getString("descrizione");
-					numeroutenti = resultSet.getInt("numeroutenti");
+					numeroutenti = resultSet.getString("numeroutenti");
 					Team team = new Team(nometeam, descrizione, numeroutenti);
 					team.setId(resultSet.getInt("id"));
 					
@@ -96,14 +94,14 @@ public class TeamDAO {
 						teamToUpdate.setDescrizione(teamRead.getDescrizione());
 					}
 					
-					if(teamToUpdate.getNumeroutenti() == 0) {
+					if(teamToUpdate.getNumeroutenti() == null || teamToUpdate.getNumeroutenti().equals("")) {
 					   teamToUpdate.setNumeroutenti(teamRead.getNumeroutenti());
 					}
 					
 					PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 					preparedStatement.setString(1, teamToUpdate.getNometeam());
 					preparedStatement.setString(2, teamToUpdate.getDescrizione());
-					preparedStatement.setInt(3, teamToUpdate.getNumeroutenti());
+					preparedStatement.setString(3, teamToUpdate.getNumeroutenti());
 					preparedStatement.setInt(4, teamToUpdate.getId());
 					int a = preparedStatement.executeUpdate();
 					if (a > 0)
@@ -127,8 +125,7 @@ public class TeamDAO {
 				int n = preparedStatement.executeUpdate();
 				if (n != 0)
 					return true;
-			}catch (SQLException e) {
-				
+			}catch (SQLException e) {				
 			}
 			return false;
 			

@@ -90,4 +90,24 @@
     <servlet-name>ProjectManagerServlet</servlet-name>
     <url-pattern>/ProjectManagerServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TeamServlet</display-name>
+    <servlet-name>TeamServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.TeamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeamServlet</servlet-name>
+    <url-pattern>/TeamServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>SecuritypatternServlet</display-name>
+    <servlet-name>SecuritypatternServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.SecuritypatternServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecuritypatternServlet</servlet-name>
+    <url-pattern>/SecuritypatternServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

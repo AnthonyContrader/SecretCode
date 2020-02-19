@@ -10,25 +10,25 @@ public class Team {
 	
 	private String descrizione;
 
-	private int numeroutenti;
+	private String numeroutenti;
 	
 	
 	public Team() {
 		
 	}
 	
-	public Team (String nometeam, String descrizione, int numeroutenti) {
-		this.nometeam= nometeam;
-		this.descrizione= descrizione;
-		this.numeroutenti= numeroutenti;
+	public Team (String nometeam, String descrizione, String numeroutenti) {
+		this.nometeam		= nometeam;
+		this.descrizione	= descrizione;
+		this.numeroutenti	= numeroutenti;
 		
 	}
 	
-	public Team (int id,String nometeam, String descrizione, int numeroutenti) {
+	public Team (int id, String nometeam, String descrizione, String numeroutenti) {
 		this.id= id;
-		this.nometeam= nometeam;
-		this.descrizione= descrizione;
-		this.numeroutenti= numeroutenti;
+		this.nometeam		= nometeam;
+		this.descrizione	= descrizione;
+		this.numeroutenti	= numeroutenti;
 		
 	}
 	
@@ -53,14 +53,14 @@ public void setDescrizione(String descrizione) {
 	this.descrizione = descrizione; 
 }
 
-public void setNumeroutenti(int numeroutenti) {
+public void setNumeroutenti(String numeroutenti) {
 	this.numeroutenti = numeroutenti;
 }
 
-public int getNumeroutenti() {
+public String getNumeroutenti() {
 	return this.numeroutenti;
 }
-
+@Override
 public String toString() {
 	return id + "\t" + nometeam +"\t\t" + descrizione + "\t\t" + numeroutenti;
 }
@@ -72,14 +72,9 @@ public boolean equals(Object obj) {
 		return true;
 	if (obj == null)
 		return false;
-	if (getClass() != obj.getClass())
+	if (this.getClass() != obj.getClass())
 		return false;
 	Team other = (Team) obj;
-	if (descrizione == null) {
-		if (other.descrizione != null)
-			return false;
-	} else if (!descrizione.equals(other.descrizione))
-		return false;
 	if (id != other.id)
 		return false;
 	if (nometeam == null) {
@@ -87,8 +82,14 @@ public boolean equals(Object obj) {
 			return false;
 	} else if (!nometeam.equals(other.nometeam))
 		return false;
-	if (numeroutenti != other.numeroutenti)
+	if (descrizione == null) {
+		if (other.descrizione != null)
+			return false;
+	} else if (!descrizione.equals(other.nometeam))
 		return false;
+	if (numeroutenti != other.numeroutenti) {
+			return false;
+	}
 	return true;
 }
 
