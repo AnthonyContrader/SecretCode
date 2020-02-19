@@ -92,6 +92,7 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+<<<<<<< HEAD
     <display-name>TeamServlet</display-name>
     <servlet-name>TeamServlet</servlet-name>
     <servlet-class>it.contrader.servlets.TeamServlet</servlet-class>
@@ -109,5 +110,24 @@
   <servlet-mapping>
     <servlet-name>SecuritypatternServlet</servlet-name>
     <url-pattern>/SecuritypatternServlet</url-pattern>
+=======
+    <display-name>SignUpServlet</display-name>
+    <servlet-name>SignUpServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.SignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignUpServlet</servlet-name>
+    <url-pattern>/SignUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewTeamServlet</display-name>
+    <servlet-name>NewTeamServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.NewTeamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewTeamServlet</servlet-name>
+    <url-pattern>/NewTeamServlet</url-pattern>
+>>>>>>> 4cb375a96a02886ff2d80b58b223b929164b7000
   </servlet-mapping>
 </web-app>

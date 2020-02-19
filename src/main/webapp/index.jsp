@@ -4,10 +4,15 @@
 <link href="css/salvatorestyle.css" rel="stylesheet">
 
 <title>Login Sample Project</title>
+
 </head> 
+
+<a href="SignUp.jsp" class="attive">
+			<button type="submit" value="login" name="pulsante">Registrati</button>
+			</a>	
 <body <% if( request.getParameterMap().containsKey("cred") && request.getParameter("cred").equals( "1") )
 		{ %>onload='alert("Credenziali Errate.\nSi prega di riprovare.");' <% }  %>> <!-- Javascript function for checking if credentials are correct, otherwise the alert is displayed -->
-
+<div class="main" >
 		<form class="login" action="LoginServlet" method="post">
 
 				<label for="user">Username: </label>
@@ -19,8 +24,17 @@
 				 <input type="password" id="pass" name="password" placeholder="Insert password" required>
 		
 			<button type="submit" value="Login" name="pulsante">Login</button>
+			<br>
+			<br>
+			
 		</form>
-
 	
+	<br>
+	<br>
+	
+<br>
+</div>
+<%@ include file="css/footer.jsp" %>
+
 </body>
 </html>
