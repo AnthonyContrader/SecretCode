@@ -29,9 +29,9 @@
 			class="form-control" placeholder="Password" required> <input
 			type="hidden" name="richiesta" value="login">
 
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Log
-			in</button>
+		<button  type="submit" value="login" name="pulsante">Login</button>
 	</form>
-
+<a href="/SignUp.jsp" class="active">
+<button type="button" value="login" name="pulsante">SignUp</button>
 </body>
 </html>

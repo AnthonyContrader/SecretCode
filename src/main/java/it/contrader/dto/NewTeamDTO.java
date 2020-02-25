@@ -1,0 +1,20 @@
+package it.contrader.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class NewTeamDTO {
+	
+	private int id;
+	
+	private int iduser;
+
+	private int idteam;
+
+	private String usertype;
+
+}

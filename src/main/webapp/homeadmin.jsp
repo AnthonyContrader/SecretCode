@@ -26,48 +26,24 @@
 	</div>
 
 	<div class="main">
-		<h1>Welcome ${user.getUsername()}</h1>
-
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-		aliquip ex ea commodo consequat. Duis aute irure dolor in
-		reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-		culpa qui officia deserunt mollit anim id est laborum." "Lorem ipsum
-		dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-		commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-		velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-		occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-		mollit anim id est laborum." "Lorem ipsum dolor sit amet, consectetur
-		adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-		magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-		irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-		fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-		sunt in culpa qui officia deserunt mollit anim id est laborum." "Lorem
-		ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-		veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-		ea commodo consequat. Duis aute irure dolor in reprehenderit in
-		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-		sint occaecat cupidatat non proident, sunt in culpa qui officia
-		deserunt mollit anim id est laborum." "Lorem ipsum dolor sit amet,
-		consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-		dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est
-		laborum."
+	<h1 style="color: #39A8E8;" >Welcome <b><u>${user.getUsername()}</u></b></h1> <!-- Prints Welcome + name of user -->
+<h1>Cosa Vorresti fare:</h1>
+			<br>
+			<br>
+			<br>
+			<a href="/NewTeam.jsp" class="attive">
+			<button type="submit" value="login" name="pulsante">gestisci new team</button>
+			</a>
+			<br>
+			<br>
+			<br>
+			
 
 
-	</div>
+</div>
 
 
-	<%@ include file="css/footer.jsp"%>
+<%@ include file="css/footer.jsp" %>
 
 </body>
-</html>
+</html> 
