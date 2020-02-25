@@ -15,7 +15,9 @@
 
 <div class="navbar">
   <a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
+			href="/user/getall">Users</a> 
+			<a href="/team/getall" class="">Teams</a>
+			<a href="/user/logout" id="logout">Logout</a>
 	</div>
 <div class="main">
 <h1 style="color: #39A8E8;" >Cosa vuoi fare <b><u>${user.getUsername()}</u></b></h1> <!-- Prints Welcome + name of user -->
