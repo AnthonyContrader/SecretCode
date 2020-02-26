@@ -52,7 +52,7 @@
  			<input
 			type="text" id="nutenti" name="numeroutenti" value=<%=t.getNumeroutenti()%>>
     	</div>
-    	<input type="hidden" name="id" value =<%=t.getIdt() %>>
+    	<input type="hidden" name="idt" value =<%=t.getIdt() %>>
   </div>
       <button type="submit" >Edit</button>
 </form>

@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -37,7 +38,7 @@ public class TeamController {
 		return "updateteam";
 	}
 	
-	@GetMapping("/update")
+	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("idt") Long idt, @RequestParam("nometeam") String nometeam,
 		@RequestParam("descrizione") String descrizione , @RequestParam("numeroutenti") String numeroutenti	) {
 		
@@ -48,10 +49,10 @@ public class TeamController {
 		dto.setNumeroutenti(numeroutenti);
 		service.update(dto);
 		setAll(request);
-		return "team";
+		return "teams";
 	}
 	
-	@GetMapping("/insert")
+	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("nometeam") String nometeam,
 		@RequestParam("descrizione") String descrizione, @RequestParam("numeroutenti") String numeroutenti) {
 		

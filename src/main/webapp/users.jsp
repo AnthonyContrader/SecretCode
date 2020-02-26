@@ -38,14 +38,14 @@
 				for (UserDTO u : list) {
 			%>
 			<tr>
-				<td><a href="/user/read?id=<%=u.getIdu()%>"> <%=u.getUsername()%>
+				<td><a href="/user/read?idu=<%=u.getIdu()%>"> <%=u.getUsername()%>
 				</a></td>
 				<td><%=u.getPassword()%></td>
 				<td><%=u.getUsertype()%></td>
-				<td><a href="/user/preupdate?id=<%=u.getIdu()%>">Edit</a></td>
+				<td><a href="/user/preupdate?idu=<%=u.getIdu()%>">Edit</a></td>
 
 
-				<td><a href="/user/delete?id=<%=u.getIdu()%>">Delete</a></td>
+				<td><a href="/user/delete?idu=<%=u.getIdu()%>">Delete</a></td>
 
 			</tr>
 			<%
