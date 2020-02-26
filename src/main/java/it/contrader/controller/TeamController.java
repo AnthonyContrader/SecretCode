@@ -25,20 +25,20 @@ public class TeamController {
 	}
 	
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("id") Long id ) {
-		service.delete(id);
+	public String delete(HttpServletRequest request, @RequestParam("idt") Long idt ) {
+		service.delete(idt);
 		setAll(request);
 		return "teams";
 	}
 	
 	@GetMapping("/preupdate")
-	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
-		request.getSession().setAttribute("dto", service.read(id));
+	public String preUpdate(HttpServletRequest request, @RequestParam("idt") Long idt) {
+		request.getSession().setAttribute("dto", service.read(idt));
 		return "updateteam";
 	}
 	
 	@GetMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("nometeam") String nometeam,
+	public String update(HttpServletRequest request, @RequestParam("idt") Long idt, @RequestParam("nometeam") String nometeam,
 		@RequestParam("descrizione") String descrizione , @RequestParam("numeroutenti") String numeroutenti	) {
 		
 		
@@ -66,8 +66,8 @@ public class TeamController {
 	}
 	
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
-		request.getSession().setAttribute("dto", service.read(id));
+	public String read(HttpServletRequest request, @RequestParam("idt") Long idt) {
+		request.getSession().setAttribute("dto", service.read(idt));
 		return "readteam";
 	}
 	

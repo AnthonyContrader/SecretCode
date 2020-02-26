@@ -37,14 +37,14 @@
 				for (TeamDTO t : list) {
 			%>
 			<tr>
-				<td><a href="/team/read?id=<%=t.getId()%>"> <%=t.getNometeam()%>
+				<td><a href="/team/read?id=<%=t.getIdt()%>"> <%=t.getNometeam()%>
 				</a></td>
 				<td><%=t.getDescrizione()%></td>
 				<td><%=t.getNumeroutenti()%></td>
-				<td><a href="/team/preupdate?id=<%=t.getId()%>">Edit</a></td>
+				<td><a href="/team/preupdate?id=<%=t.getIdt()%>">Edit</a></td>
 
 
-				<td><a href="/team/delete?id=<%=t.getId()%>">Delete</a></td>
+				<td><a href="/team/delete?id=<%=t.getIdt()%>">Delete</a></td>
 
 			</tr>
 			<%

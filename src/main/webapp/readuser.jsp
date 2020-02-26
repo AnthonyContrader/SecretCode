@@ -32,7 +32,7 @@
 				<th>Usertype</th>
 			</tr>
 			<tr>
-				<td><%=u.getId()%></td>
+				<td><%=u.getIdu()%></td>
 				<td><%=u.getUsername()%></td>
 				<td><%=u.getPassword()%></td>
 				<td><%=u.getUsertype()%></td>

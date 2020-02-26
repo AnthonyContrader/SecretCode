@@ -12,7 +12,7 @@ public class TeamConverter extends AbstractConverter<Team, TeamDTO> {
 	public Team toEntity(TeamDTO teamDTO) {
 		Team team = null;
 		if (teamDTO != null) {
-			team = new Team(teamDTO.getId(), teamDTO.getNometeam(),teamDTO.getDescrizione(), teamDTO.getNumeroutenti());
+			team = new Team(teamDTO.getIdt(), teamDTO.getNometeam(),teamDTO.getDescrizione(), teamDTO.getNumeroutenti());
 		}
 		return team;
 	}
@@ -22,7 +22,7 @@ public class TeamConverter extends AbstractConverter<Team, TeamDTO> {
 	public TeamDTO toDTO(Team team) {
 		TeamDTO teamDTO = null;
 		if ( team != null) {
-			teamDTO = new TeamDTO(team.getId(), team.getNometeam(), team.getDescrizione(), team.getNumeroutenti());
+			teamDTO = new TeamDTO(team.getIdt(), team.getNometeam(), team.getDescrizione(), team.getNumeroutenti());
 		}
 		return teamDTO;
 	}

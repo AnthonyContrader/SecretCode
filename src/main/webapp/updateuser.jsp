@@ -54,7 +54,7 @@
   				<option value="USER" <%if(u.getUsertype().toString().equals("USER")) {%>selected<%}%>>USER</option>
 			</select>
     	</div>
-    	<input type="hidden" name="id" value =<%=u.getId() %>>
+    	<input type="hidden" name="id" value =<%=u.getIdu() %>>
   </div>
       <button type="submit" >Edit</button>
 </form>

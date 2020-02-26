@@ -33,7 +33,7 @@
 				<th>numeroutenti</th>
 			</tr>
 			<tr>
-				<td><%=t.getId()%></td>
+				<td><%=t.getIdt()%></td>
 				<td><%=t.getNometeam()%></td>
 				<td><%=t.getDescrizione()%></td>
 				<td><%=t.getNumeroutenti()%></td>
