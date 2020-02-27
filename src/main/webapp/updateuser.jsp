@@ -18,6 +18,7 @@
   <a href="/homeadmin.jsp">Home</a>
   <a class="active" href="/user/getall">Users</a>
   <a href="/team/getall" class="">Teams</a>
+  <a href="/securitypattern/getall" class="">Security patterns</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>

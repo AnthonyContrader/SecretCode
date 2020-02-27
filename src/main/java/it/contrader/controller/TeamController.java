@@ -44,6 +44,7 @@ public class TeamController {
 		
 		
 		TeamDTO dto = new TeamDTO();
+		dto.setIdt(idt);
 		dto.setNometeam(nometeam);
 		dto.setDescrizione(descrizione);
 		dto.setNumeroutenti(numeroutenti);

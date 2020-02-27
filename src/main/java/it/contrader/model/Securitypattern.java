@@ -1,37 +1,27 @@
 package it.contrader.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-public class User {
-
-	public enum Usertype {
-		ADMIN, USER
-	}
-
+public class Securitypattern {
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idu;
-
-	@Column(unique = true)
-	private String username;
-
-	private String password;
-
-	private Usertype usertype;
+	private Long ids;
 	
+	private String nome;
 	
-	
-
+	private String tipo;
 }
-
