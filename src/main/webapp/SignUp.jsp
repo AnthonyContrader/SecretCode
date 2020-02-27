@@ -2,26 +2,21 @@
 	pageEncoding="ISO-8859-1" 
 	import="java.util.List"
 	import="it.contrader.dto.NewTeamDTO"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<link href="css/salvatorestyle.css" rel="stylesheet">
-<title>User insert</title>
+
+<title>Sign Up</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="/css/vittoriostyle.css" rel="stylesheet">
 </head>
-<body>
-<%@ include file="/css/header.jsp" %>
-
-<div class="navbar">
-  <a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> 
-			<a href="/team/getall" class="">Teams</a>
-			<a href="/user/logout" id="logout">Logout</a>
-	</div>
-<div class="main">
 
 
-		<form class="login" action="/SignUp/insert" method="post">
+<body class="text-center">
+
+
+<form class="login" action="/SignUp/insert" method="post">
 
 				<label for="user">Username: </label>
 				<input type="text" id="user" name="username" placeholder="Insert username" required> 

@@ -47,24 +47,24 @@ public class UserController {
 	}
 
 	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("idu") Long idu) {
-		service.delete(idu);
+	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+		service.delete(id);
 		setAll(request);
 		return "users";
 	}
 
 	@GetMapping("/preupdate")
-	public String preUpdate(HttpServletRequest request, @RequestParam("idu") Long idu) {
-		request.getSession().setAttribute("dto", service.read(idu));
+	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", service.read(id));
 		return "updateuser";
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("idu") Long idu, @RequestParam("username") String username,
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("username") String username,
 			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
 
 		UserDTO dto = new UserDTO();
-		dto.setIdu(idu);
+		dto.setId(id);
 		dto.setUsername(username);
 		dto.setPassword(password);
 		dto.setUsertype(usertype);
@@ -87,8 +87,8 @@ public class UserController {
 	}
 
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("idu") Long idu) {
-		request.getSession().setAttribute("dto", service.read(idu));
+	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", service.read(id));
 		return "readuser";
 	}
 
