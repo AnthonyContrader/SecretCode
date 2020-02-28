@@ -17,5 +17,5 @@ public class TeamDTO {
 	
 	private String numeroutenti;
 	
-	private Long numeroteam;
+	private String numeroteam;
 }

@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="it.contrader.dto.TeamDTO"%>
 <html>
@@ -13,11 +14,12 @@
 <body>
 	<%@ include file="./css/header.jsp"%>
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> 
-		<a href="/user/getall">Users</a> 
-		<a href="/team/getall" class="active">Teams</a>
-		<a href="/securitypattern/getall" class="">Security patterns</a>
-		<a href="/user/logout" id="logout">Logout</a>
+		<a href="/homeadmin.jsp">Home</a> <a class=""
+			href="/user/getall">Users</a>
+			<a href="/NewTeam/getall" class="">NewTeams</a>
+			 <a href="/team/getall" class="active">Teams</a>
+			 <a href="/securitypattern/getall" class="">Security patterns</a>
+			<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<br>
 

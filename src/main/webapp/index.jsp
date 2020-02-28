@@ -32,6 +32,6 @@
 		<button  type="submit" value="login" name="pulsante">Login</button>
 	</form>
 <a href="/SignUp.jsp" class="active">
-<button type="button" value="login" name="pulsante">SignUp</button>
+<button type="button" name="pulsante">SignUp</button>
 </body>
 </html>

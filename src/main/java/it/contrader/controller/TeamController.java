@@ -1,3 +1,6 @@
+
+
+
 package it.contrader.controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,14 +58,12 @@ public class TeamController {
 	
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("nometeam") String nometeam,
-		@RequestParam("descrizione") String descrizione, @RequestParam("numeroutenti") String numeroutenti,
-		 @RequestParam("numeroteam") Long numeroteam) {
+		@RequestParam("descrizione") String descrizione, @RequestParam("numeroutenti") String numeroutenti) {
 		
 		TeamDTO dto = new TeamDTO();
 		dto.setNometeam(nometeam);
 		dto.setDescrizione(descrizione);
 		dto.setNumeroutenti(numeroutenti);
-		dto.setNumeroteam(numeroteam);
 		service.insert(dto);
 		setAll(request);
 		return "teams";
@@ -79,3 +80,4 @@ public class TeamController {
 		request.getSession().setAttribute("list", service.getAll());
 	}
 }
+

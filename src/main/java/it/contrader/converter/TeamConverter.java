@@ -1,3 +1,4 @@
+
 package it.contrader.converter;
 
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ public class TeamConverter extends AbstractConverter<Team, TeamDTO> {
 	public Team toEntity(TeamDTO teamDTO) {
 		Team team = null;
 		if (teamDTO != null) {
-			team = new Team(teamDTO.getIdt(), teamDTO.getNometeam(),teamDTO.getDescrizione(), teamDTO.getNumeroutenti(), teamDTO.getNumeroteam());
+			team = new Team(teamDTO.getIdt(), teamDTO.getNometeam(),teamDTO.getDescrizione(), teamDTO.getNumeroutenti(), teamDTO.getNumeroteam(), null);
 		}
 		return team;
 	}
@@ -27,3 +28,4 @@ public class TeamConverter extends AbstractConverter<Team, TeamDTO> {
 		return teamDTO;
 	}
 }
+

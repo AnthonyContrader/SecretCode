@@ -1,5 +1,5 @@
 package it.contrader.dto;
-
+import it.contrader.dto.PairDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,5 +1,4 @@
-
-<%@ page import="it.contrader.dto.UserDTO" import="java.util.*"%>
+<%@ page  import="it.contrader.dto.PairDTO" import="it.contrader.dto.UserDTO" import="it.contrader.dto.TeamDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -16,40 +15,40 @@
 
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
-		<a class="active" href="/user/getall">Users</a>
-          <a href="/NewTeam/getall" class="">NewTeams</a>
+		<a href="/user/getall">Users</a>
+          <a href="/NewTeam/getall" class="active">NewTeams</a>
 			<a href="/team/getall" class="">Teams</a>
 			<a href="/securitypattern/getall" class="">Security patterns</a>
 			 <a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
 		<%
-			List<UserDTO> list = (List<UserDTO>) request.getSession().getAttribute("list");
+			List<PairDTO<UserDTO, TeamDTO, String>> list = (List<PairDTO<UserDTO, TeamDTO, String>>) request.getSession().getAttribute("list");
 		%>
 
 		<br>
 
 		<table>
 			<tr>
-				<th>Username</th>
-				<th>Password</th>
-				<th>Usertype</th>
+				<th>username</th>
+				<th>nome team</th>
+				<th>teamrole</th>
 				<th></th>
 				<th></th>
 			</tr>
 			<%
-				for (UserDTO u : list) {
+				for (PairDTO<UserDTO, TeamDTO, String> pair : list) {
 			%>
 			<tr>
-				<td><a href="/user/read?id=<%=u.getId()%>"> <%=u.getUsername()%>
+				<td><a href="/NewTeam/read?id=<%=pair.getDto0().getId()%>"> <%=pair.getDto0().getUsername()%>
 				</a></td>
-				<td><%=u.getPassword()%></td>
-				<td><%=u.getUsertype()%></td>
-				<td><a href="/user/preupdate?id=<%=u.getId()%>">Edit</a></td>
+				<td><%=pair.getDto1().getNometeam()%></td>
+				<td><%=pair.getData()%></td>
+			<td><a href="/NewTeam/update?id=<%=pair.getDto0().getId()%>">Edit</a></td>
 
 
-				<td><a href="/user/delete?id=<%=u.getId()%>">Delete</a></td>
-
+				<td><a href="/NewTeam/delete?id=<%=pair.getDto0().getId()%>">Delete</a></td>
+			
 			</tr>
 			<%
 				}
@@ -58,31 +57,31 @@
 
 
 
-		<form id="floatright" action="/user/insert" method="post">
+		<form id="floatright" action="/NewTeam/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="user">Username</label>
+					<label for="username">username</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="user" name="username"
+					<input type="text" id="username" name="username"
 						placeholder="inserisci username">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="pass">Password</label>
+					<label for="nometeam">Nome Team</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="pass" name="password"
-						placeholder="inserisci password">
+					<input type="text" id="nometeam" name="nometeam"
+						placeholder="inserisci nometeam">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="type">Usertype</label>
+					<label for="type">teamrole</label>
 				</div>
 				<div class="col-75">
-					<select id="type" name="usertype">
+					<select id="teamRole" name="teamRole">
 						<option value="ADMIN">ADMIN</option>
 						<option value="USER">USER</option>
 

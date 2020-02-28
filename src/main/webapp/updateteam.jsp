@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="it.contrader.dto.TeamDTO"%>
 <!DOCTYPE html>
@@ -18,6 +19,7 @@
   <a href="/homeadmin.jsp">Home</a>
   <a class="" href="/user/getall">Users</a>
   <a href="/team/getall" class="active">Teams</a>
+  <a href="/NewTeam/getall" class="">NewTeams</a>
   <a href="/securitypattern/getall" class="">Security patterns</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
@@ -55,7 +57,7 @@
     	</div>
     	<input type="hidden" name="idt" value =<%=t.getIdt() %>>
   </div>
-      <button type="submit">Edit</button>
+      <button type="submit" >Edit</button>
 </form>
 
 	

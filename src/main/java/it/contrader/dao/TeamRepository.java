@@ -1,3 +1,4 @@
+
 package it.contrader.dao;
 
 import javax.transaction.Transactional;
@@ -13,4 +14,7 @@ public interface TeamRepository extends CrudRepository<Team, Long> {
 
 	
 		Team findByNometeamAndDescrizioneAndNumeroutentiAndNumeroteam(String nometeam, String descrizione, String numeroutenti, String numeroteam);
+		Team findByNometeam(String nometeam);
+		
 }
+

@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"%>
 <!DOCTYPE html>
@@ -18,6 +19,7 @@
   <a href="/homeadmin.jsp">Home</a>
   <a class="active" href="/user/getall">Users</a>
   <a href="/team/getall" class="">Teams</a>
+  <a href="/NewTeam/getall" class="">NewTeams</a>
   <a href="/securitypattern/getall" class="">Security patterns</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
@@ -55,7 +57,7 @@
   				<option value="USER" <%if(u.getUsertype().toString().equals("USER")) {%>selected<%}%>>USER</option>
 			</select>
     	</div>
-    	<input type="hidden" name="idu" value =<%=u.getIdu() %>>
+    	<input type="hidden" name="id" value =<%=u.getId() %>>
   </div>
       <button type="submit" >Edit</button>
 </form>

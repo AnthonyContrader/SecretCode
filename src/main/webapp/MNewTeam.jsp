@@ -1,5 +1,4 @@
 
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -25,29 +24,35 @@
 		<a class="active" href="/homeadmin.jsp">Home</a> 
 		<a href="/user/getall">Users</a>
 		<a href="/team/getall" class="">Teams</a>
-		<a href="/NewTeam/getall" class="">NewTeams</a>
+		<a href="/NewTeam.jsp" class="">NewTeams</a>
 		<a href="/securitypattern/getall" class="">Security patterns</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
 	<div class="main">
-	<h1 style="color: #39A8E8;" >Welcome <b><u>${user.getUsername()}</u></b></h1> <!-- Prints Welcome + name of user -->
-<h1>scegli cosa vuoi fare </h1>
-			<br>
-			<br>
-			
-		
-			<br>
-			<br>
-			<br>
-			
+
+<form class="login" action="/NewTeam/update" method="post">
+
+      <label for="username">usernamer</label>
+
+      <input type="text" id="username" name="username" placeholder="Insert username" required style="width: 90%;">
+ 
+
+     <label for="nometeam">nome team</label>
+
+      <input type="text" id="nometeam" name="nometeam" placeholder="Insert nometeam" required style="width: 90%;"> 
 
 
+      <label for="usertype">team Role</label>
+      <input type="text" id="teamRole" name="teamRole" placeholder="Insert Role teAM" required>
+   		
+<button type="submit" value="update">Modifica</button>
+</form>
+
+
+	
 </div>
-
-
-<%@ include file="css/footer.jsp" %>
-
+<br>
+<%@ include file="/css/footer.jsp" %>	
 </body>
-
-</html> 
+</html>

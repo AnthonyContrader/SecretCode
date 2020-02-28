@@ -1,17 +1,19 @@
 package it.contrader.dao;
 
+import java.util.Optional;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import it.contrader.model.User;
+import it.contrader.model.NewTeamModel;
 
 @Repository
 @Transactional
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface NewTeamRepository extends CrudRepository<NewTeamModel, Long> {
 
-	User findByUsernameAndPassword(String username, String password);
-	User findByUsername(String username);
+	Optional<NewTeamModel> findById(Long id);
+
 
 }
