@@ -1,7 +1,5 @@
 package it.contrader.model;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,18 +15,14 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table
-public class Team {
+public class Partecipante {
+	 
 	
-	@Id 
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idt;
+	private Long idp;
 	
-	private String nometeam;
+	private String nickname;
 	
-	private String descrizione;
-	
-	private String numeroutenti;
-	
-	private Long numeroteam;
-
+	private String teamnumero;
 }

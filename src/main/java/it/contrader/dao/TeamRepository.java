@@ -12,5 +12,5 @@ import it.contrader.model.Team;
 public interface TeamRepository extends CrudRepository<Team, Long> {
 
 	
-		Team findByNometeamAndDescrizioneAndNumeroutenti(String nometeam, String descrizione, String numeroutenti);
+		Team findByNometeamAndDescrizioneAndNumeroutentiAndNumeroteam(String nometeam, String descrizione, String numeroutenti, String numeroteam);
 }

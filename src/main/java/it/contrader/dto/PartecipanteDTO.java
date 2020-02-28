@@ -7,15 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TeamDTO {
-
-	private Long idt;
+public class PartecipanteDTO {
 	
-	private String nometeam;
+	private Long idp;
 	
-	private String descrizione;
+	private String nickname;
 	
-	private String numeroutenti;
-	
-	private Long numeroteam;
+	private String teamnumero;
 }
