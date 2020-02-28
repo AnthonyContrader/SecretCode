@@ -4,14 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PartecipanteDTO {
+@Data
+public class ProjectDTO {
 	
-	private Long idp;
+	private Long idc;
 	
-	private String nickname;
+	private String nome;
 	
-	private String teamnumero;
+	private String descrizione;
+	
 }

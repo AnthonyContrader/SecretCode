@@ -1,10 +1,12 @@
 package it.contrader.model;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,15 +16,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table
-public class Partecipante {
-	 
+public class Project {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idp;
+	private Long idc;
 	
-	private String nickname;
+	@Column(unique = true)
+	private String nome;
 	
-	private String teamnumero;
+	private String descrizione;
+	
+
+	
 }

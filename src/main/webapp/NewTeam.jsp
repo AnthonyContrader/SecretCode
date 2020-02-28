@@ -19,6 +19,7 @@
           <a href="/NewTeam/getall" class="active">NewTeams</a>
 			<a href="/team/getall" class="">Teams</a>
 			<a href="/securitypattern/getall" class="">Security patterns</a>
+			<a href="/project/getall" class="">Project</a>
 			 <a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
