@@ -1,11 +1,8 @@
 package it.contrader.model;
 
-import javax.persistence.Entity;
+import java.util.Set;
 
 import javax.persistence.*;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,5 +38,6 @@ public class User {
 	private String password;
 
 	private Usertype usertype;
+	
 	
 }
