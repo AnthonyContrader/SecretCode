@@ -6,38 +6,38 @@ form{
     border-color: crimson;
 }
 
-img{
-    position: inherit;
-    width:50%;
-    margin: 12%;
+.img{
+  
+    width:44%;
+    margin-top: -15%;
+    margin-left: 80%;
 }
 
 input, input:hover, input::selection, input:checked, input:focus{
     border: 0;
-    background-color: darkorange;
-    border-radius: 0;
+    background-color: rgb(0, 255, 106);
+    border: 2px ;
+  padding: 20px;
+  border-radius: 25px;
     color: white;
-    border-bottom: 1px solid crimson;
+    border-bottom: 1px solid rgb(20, 220, 170);
     margin: 0px; 
 }
 
-.container-fluid{
-    background-color: darkorange;
-    height: 100vh;
-}
+
 input::placeholder{
     color: white;
 }
 .form-control{
 border: none;
-background-color: darkorange;
+background-color: rgb(0, 255, 106);
 color: white;
 border-bottom: 1px solid white;
 }
 
 .login{
 border: none;
-background-color: darkorange;
+background-color: rgb(0, 255, 106);
 color: white;
 border: 1px solid white;
 border-radius: 2px;
@@ -48,6 +48,6 @@ padding-left: auto;
 }
 
 p{
-font-size: 14px;
+font-size: 20px;
 color: white;
 }

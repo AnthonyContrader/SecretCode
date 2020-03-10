@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDTO } from 'src/dto/userdto';
+import { TeamDTO } from 'src/dto/teamdto';
+import { ProjectDTO } from 'src/dto/projectdto';
+import { SecuritypatternDTO } from 'src/dto/securitypatterndto';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera
@@ -13,11 +16,20 @@ import { UserDTO } from 'src/dto/userdto';
 export class AdminDashboardComponent implements OnInit {
 
   user: UserDTO;
+  
+  team: TeamDTO;
+
+  project: ProjectDTO;
+
+  securitypattern: SecuritypatternDTO;
 
   constructor() { }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.team = JSON.parse(localStorage.getItem('currentTeam'));
+    this.project = JSON.parse(localStorage.getItem('currentProject'));
+    this.securitypattern = JSON.parse(localStorage.getItem('currentSecuritypattern'));
   }
 
 }

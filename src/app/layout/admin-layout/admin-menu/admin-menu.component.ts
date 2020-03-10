@@ -11,6 +11,9 @@ export class AdminMenuComponent implements OnInit {
   isUserCollapsed = false;
   isClientCollapsed = false;
   isAccountCollapsed = false;
+  isTeamCollapsed = false;
+  isProjectCollapsed = false;
+  isSecuritypatternCollapsed = false;
 
   constructor(private router: Router) {
   }
@@ -34,4 +37,23 @@ export class AdminMenuComponent implements OnInit {
       this.isAccountCollapsed = true;
     } else { this.isAccountCollapsed = false; }
   }
+
+  teamscollapse() {
+    if(this.isTeamCollapsed === false) {
+      this.isTeamCollapsed = true;
+    } else { this.isTeamCollapsed = false; }
+  }
+
+  projectscollapse() {
+    if(this.isProjectCollapsed === false){
+      this.isProjectCollapsed = true;
+    }else { this.isProjectCollapsed = false; }
+  }
+
+  securitypatternscollapse(){
+    if(this.isSecuritypatternCollapsed === false) {
+      this.isSecuritypatternCollapsed = true;
+    }else { this.isSecuritypatternCollapsed = false; }
+  }
+ 
 }

@@ -30,6 +30,36 @@
                         </i> Manage Users </a>
                 </button>
             </div>
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#teams"
+                (click)="teamscollapse()">
+                <i class="fas fa-users-cog" style="margin-right: 15px"></i>Teams
+            </button>
+            <div class="collapsebtn" id="teams" *ngIf="isTeamCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/teams']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Teams </a>
+                </button>
+            </div>
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#projects"
+                (click)="projectscollapse()">
+                <i class="fas fa-project-diagram" style="margin-right: 15px"></i>Projects
+            </button>
+            <div class="collapsebtn" id="projects" *ngIf="isProjectCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/projects']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Project </a>
+                </button>
+            </div>
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#securitypatterns"
+                (click)="securitypatternscollapse()">
+                <i class="fas fa-unlock-alt" style="margin-right: 15px"></i>Securitypatterns
+            </button>
+            <div class="collapsebtn" id="securitypatterns" *ngIf="isSecuritypatternCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/securitypatterns']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Security pattern </a>
+                </button>
+            </div>
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

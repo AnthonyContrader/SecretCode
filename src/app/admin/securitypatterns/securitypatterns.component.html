@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-1">
+
+        </div>
+            <div class="col-md-10">
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Edit</th>
+                        <th>Securitypattern</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input placeholder="nome" [(ngModel)]="securitypatterntoinsert.nome">
+                        </td>
+                        <td>
+                            <select placeholder="tipo" [(ngModel)]="securitypatterntoinsert.tipo">
+                                <option value="MD4">MD4</option>
+                                <option value="SHA">SHA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button (click)="insert(securitypatterntoinsert)">insert</button>
+                        </td>
+                        <td>
+                            <button (click)="clear()">Clear</button>
+                        </td>
+                    </tr>
+                    <tr *ngFor="let securitypattern of securitypatterns">
+                        <td>
+                            <input [(ngModel)]="securitypattern.nome">
+                        </td>
+                        <td>
+                            <select [(ngModel)]="securitypattern.tipo">
+                                <option [selected]="securitypattern.tipo===MD4" value="MD4">MD4</option>
+                                <option [selected]="securitypattern.tipo===SHA" value="SHA">SHA</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button (click)=update(securitypattern)>Save</button>
+                        </td>
+                        <td>
+                            <button (click)="delete(securitypattern)">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="col-md-1"></div>
+
+    </div>
+
+</div>

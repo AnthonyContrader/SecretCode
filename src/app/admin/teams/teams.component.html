@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-1">
+ 
+        </div>
+            <div class="col-md-10">
+                <table>
+                    <tr>
+                        <th>Nometeam</th>
+                        <th>Descrizione</th>
+                        <th>Numeroutenti</th>
+                        <th>Edit</th>
+                        <th>Team</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input placeholder="nometeam" [(ngModel)]="teamtoinsert.nometeam">
+                        </td>
+                        <td>
+                            <input placeholder="descrizione" [(ngModel)]="teamtoinsert.descrizione">
+                        </td>
+                        <td>
+                            <input placeholder="numeroutenti" [(ngModel)]="teamtoinsert.numeroutenti">
+                        </td>
+                        <td>
+                            <button (click)="insert(teamtoinsert)">Insert</button>
+                        </td>
+                        <td>
+                            <button (click)="clear()">Clear</button>
+                        </td>
+                    </tr>
+                    <tr *ngFor="let team of teams">
+                        <td>
+                            <input [(ngModel)]="team.nometeam">
+                        </td>
+                        <td>
+                            <input [(ngModel)]="team.descrizione">
+                        </td>
+                        <td>
+                            <input [(ngModel)]="team.numeroutenti">
+                        </td>
+                        <td>
+                            <button (click)="update(team)">Save</button>
+                        </td>
+                        <td>
+                            <button (click)="delete(team)">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+
+        
+    </div>
+</div>

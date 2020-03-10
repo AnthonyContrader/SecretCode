@@ -1,0 +1,16 @@
+a:hover {
+    color: #999999;
+}
+
+input, select {
+    background-color: inherit;
+    font-size: inherit;
+}
+
+input:hover,  input:active, input:focus{
+    border: 2px solid crimson;
+}
+
+button,hover{
+    background-color: crimson;
+}
