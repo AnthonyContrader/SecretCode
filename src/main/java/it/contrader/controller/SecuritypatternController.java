@@ -18,60 +18,10 @@ import it.contrader.service.SecuritypatternService;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/securitypattern")
-public class SecuritypatternController {
+public class SecuritypatternController extends AbstractController<SecuritypatternDTO> {
 	
 	@Autowired
 	private SecuritypatternService service;
 	
-	@GetMapping("/getall")
-	public String getAll(HttpServletRequest request) {
-		setAll(request);
-		return "securitypatterns";
-	}
 	
-	@GetMapping("/delete")
-	public String delete(HttpServletRequest request, @RequestParam("ids") Long ids) {
-		service.delete(ids);
-		setAll(request);
-		return "securitypatterns";
-	}
-	
-	@GetMapping("/preupdate")
-	public String preUpdate(HttpServletRequest request, @RequestParam("ids") Long ids) {
-		request.getSession().setAttribute("dto", service.read(ids));
-		return "updatesecuritypattern";
-	}
-	
-	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("ids") Long ids, @RequestParam("nome") String nome, @RequestParam("tipo") String tipo) {
-		
-		SecuritypatternDTO dto = new SecuritypatternDTO();
-		dto.setIds(ids);
-		dto.setNome(nome);
-		dto.setTipo(tipo);
-		service.insert(dto);
-		setAll(request);
-		return "securitypatterns";
-	}
-	
-	@PostMapping("insert")
-	public String insert(HttpServletRequest request, @RequestParam("nome") String nome, @RequestParam("tipo") String tipo) {
-		
-		SecuritypatternDTO dto = new SecuritypatternDTO();
-		dto.setNome(nome);
-		dto.setTipo(tipo);
-		service.insert(dto);
-		setAll(request);
-		return "securitypatterns";
-	}
-	
-	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("ids") Long ids) {
-		request.getSession().setAttribute("dto", service.read(ids));
-		return "readsecuritypattern";
-	}
-	
-	private void setAll(HttpServletRequest request) {
-		request.getSession().setAttribute("list", service.getAll());
-	}
 }
