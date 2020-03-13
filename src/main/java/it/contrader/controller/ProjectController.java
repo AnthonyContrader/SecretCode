@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.contrader.dto.ProjectDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.service.ProjectService;
 
 
@@ -23,3 +24,4 @@ public class ProjectController extends AbstractController<ProjectDTO>{
 	
 	
 }
+

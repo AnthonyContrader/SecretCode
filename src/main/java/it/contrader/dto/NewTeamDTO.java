@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 
 public class NewTeamDTO {
 	private Long id;
-
+	private String username;
+	private String nometeam;
 	private String teamRole;
 
 

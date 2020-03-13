@@ -22,6 +22,6 @@ public class SecuritypatternController extends AbstractController<Securitypatter
 	
 	@Autowired
 	private SecuritypatternService service;
-	
-	
 }
+	
+	

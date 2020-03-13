@@ -21,7 +21,7 @@ public class NewTeamConverter extends AbstractConverter<NewTeamModel, NewTeamDTO
 	public NewTeamDTO toDTO(NewTeamModel newTeamModel) {
 		NewTeamDTO newTeamDTO = null;
 		if (newTeamModel != null) {
-			newTeamDTO = new NewTeamDTO(newTeamModel.getId(), newTeamModel.getTeamRole());
+			newTeamDTO = new NewTeamDTO(newTeamModel.getId(), newTeamModel.getTeamRole(), null, null);
 
 		}
 		return newTeamDTO;

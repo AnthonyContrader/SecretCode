@@ -22,7 +22,7 @@ public class ProjectService extends AbstractService<Project, ProjectDTO> {
 		return converter.toDTO(repository.findByNomeAndDescrizione(nome, descrizione));
 	}
 
-	
+
 	
 	
 	
