@@ -6,12 +6,19 @@ form{
     border-color: crimson;
 }
 
-.img{
-  
-    width:44%;
-    margin-top: -15%;
-    margin-left: 80%;
+
+.logo{
+    margin-top: 5%;
 }
+
+
+.entry{
+    margin-top: -10%; 
+    background-position: center center;
+}
+
+
+
 
 input, input:hover, input::selection, input:checked, input:focus{
     border: 0;
@@ -51,3 +58,4 @@ p{
 font-size: 20px;
 color: white;
 }
+

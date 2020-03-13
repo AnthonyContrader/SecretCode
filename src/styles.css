@@ -2,20 +2,24 @@ button{
     background-color: rgb(13, 136, 79);
 }/* You can add global styles to this file, and also import other style files */
 
-.body{
-    background-image: url("assets/sfondomtx.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 
-}
+
 
 .spx {
     background-image: url("assets/sfondopx.jpg");
-    margin-top:    5%;
-    margin-left: 9%;
-    padding-right: 47%;
-    padding-top: 8%;
-    border-radius: 1%;
-
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    margin-top: 7%;
+    height: 80vh;
+   
+    
 
 }
+
+.background{
+    background-image: url("assets/sfondomtx.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+
