@@ -1,4 +1,5 @@
 
+<<<<<<< Updated upstream
   
     <div class="container-fluid">
         <div class="row background">
@@ -27,3 +28,27 @@
               </div>
             </div>
         </div>  
+=======
+  <div class="row">
+    <div class="spx">
+    <div class="col-md-7">
+      <img class="img" src="../../assets/SecretCodeLogo-10.svg" alt="logo">
+    </div>
+    <div class="col-md-5">
+      <form class="UsPw" #f="ngForm">
+        <p>Please insert username and password to Login or Sign Up</p>
+        <div class="form-group">
+          <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
+        </div>
+        <button type="submit" (click)="login(f)">Login</button>
+       
+      </form>
+        
+      <a href='http://localhost:4200/signUp' class="=active"><button type="button" name="pulsante">SignUp</button></a>
+    </div>
+    </div>
+</div>
+>>>>>>> Stashed changes

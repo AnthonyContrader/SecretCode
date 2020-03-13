@@ -3,8 +3,9 @@ import { UserService } from 'src/service/user.service';
 import { UserDTO } from 'src/dto/userdto';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
+  selector: 'app-users' ,
+  templateUrl: './users.component.html', 
+ 
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
