@@ -17,6 +17,9 @@ export class UserDTO {
    password: string;
 
    usertype: Usertype;
+   getSearchString() : string{
+      return this.id.toString()+this.username+this.password+this.usertype;
+   }
 
 }
 
