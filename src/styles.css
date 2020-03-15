@@ -18,9 +18,10 @@ button{
 .background{
     background-image: url("assets/sfondomtx.jpg");
     background-repeat: no-repeat;
-    background-position: center center;
     background-size: cover;
     height: 100vh;
+    
+    
 }
 
 .form-container{

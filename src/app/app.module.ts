@@ -7,8 +7,6 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AdminModule } from './admin/admin.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignUpModule } from './sign-up/signUp.module';
 
 /** 
  * Modulo principale dell'applicazione. Qui vengono importati i moduli secondari. L'UNICA component
@@ -30,7 +28,7 @@ import { SignUpModule } from './sign-up/signUp.module';
     HttpClientModule,
     LayoutModule,
     AdminModule,
-    SignUpModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
