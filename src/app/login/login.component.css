@@ -8,13 +8,26 @@ form{
 
 
 .logo{
-    margin-top: 5%;
+   
+    background-repeat: no-repeat;
+
+    height: 70vh;
 }
 
 
 .entry{
-    margin-top: -10%; 
-    background-position: center center;
+    margin-top: -15%; 
+    
+}
+
+.UsPw{
+    margin-top: 25%;
+    
+}
+
+.blocco{
+    margin-right: -20%;
+    margin-left: -50%;
 }
 
 
