@@ -1,6 +1,7 @@
 package it.contrader.model;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,8 +29,8 @@ public class Project {
 	
 	private String descrizione;
 	
-	@OneToOne
-	@JoinColumn(name="team_id", referencedColumnName = "idt")
-	private Team teams;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="project_id", referencedColumnName = "idt")
+	private Team teamProj;
 	
 }

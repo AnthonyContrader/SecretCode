@@ -42,10 +42,10 @@ public class Team {
 	
 	private String numeroteam;
 
-	@OneToMany(mappedBy= "team")
-	private Set<NewTeamModel> users;
+	//verso utente
+	@ManyToMany(mappedBy = "teamUser")
+	private Set<User> users = new HashSet<>();	
 
-	@OneToOne
-	@JoinColumn(name="project_ID",referencedColumnName = "idc")
-	private Project projects;
+	@OneToOne(mappedBy="teamProj")
+	private Project teamProjs;
 }

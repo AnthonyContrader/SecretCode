@@ -1,5 +1,6 @@
 package it.contrader.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -38,6 +39,11 @@ public class User {
 	private String password;
 
 	private Usertype usertype;
+	
+	// verso team
+		@ManyToMany(cascade = { CascadeType.ALL })
+	    @JoinTable(name = "user_team", joinColumns = { @JoinColumn(name = "id") }, inverseJoinColumns = { @JoinColumn(name = "idt") })
+		private Set<Team> teamUser = new HashSet<>();
 	
 	
 }
