@@ -1,5 +1,6 @@
 import {Usertype} from './usertype';
-
+import{TeamDTO} from'./teamdto';
+import { from } from 'rxjs';
 /**
  * Classe DTO di User. DEVE essere uguale (stesso nome classe, stessi attributi e stessi nomi) a
  * quello nel backend. 
@@ -20,6 +21,6 @@ export class UserDTO {
    getSearchString() : string{
       return this.id.toString()+this.username+this.password+this.usertype;
    }
-
+   teamUser: TeamDTO = new TeamDTO();
 }
 

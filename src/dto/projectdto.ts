@@ -1,3 +1,6 @@
+import{TeamDTO} from './teamdto';
+import { from } from 'rxjs';
+
 export class ProjectDTO {
 
     idc: number;
@@ -5,4 +8,5 @@ export class ProjectDTO {
     nome: string;
      
     descrizione: string;
+    teamProj: TeamDTO = new TeamDTO();
 }

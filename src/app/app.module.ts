@@ -7,7 +7,7 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { AdminModule } from './admin/admin.module';
-
+import{UserDashboardModule} from './user-dashboard/user-dashboard.module'
 /** 
  * Modulo principale dell'applicazione. Qui vengono importati i moduli secondari. L'UNICA component
  * da dichiare qui è l'AppComponent, tutte le altre devono essere dichiarate nel loro modulo e questo importato
@@ -18,6 +18,7 @@ import { AdminModule } from './admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
+    
    
 
   ],
@@ -28,6 +29,7 @@ import { AdminModule } from './admin/admin.module';
     HttpClientModule,
     LayoutModule,
     AdminModule,
+    UserDashboardModule,
     
   ],
   providers: [],

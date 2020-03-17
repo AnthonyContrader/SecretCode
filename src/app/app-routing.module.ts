@@ -13,6 +13,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch: 'full' },
   { path: '', redirectTo:'/signUp', pathMatch: 'full' },
+  {path: '', redirectTo:'/user-dashboard', pathMatch: 'full'}
 ];
 
 @NgModule({

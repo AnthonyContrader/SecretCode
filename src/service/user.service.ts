@@ -4,7 +4,6 @@ import { UserDTO } from 'src/dto/userdto';
 import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from 'src/dto/logindto';
 import { Observable } from 'rxjs';
-import { NewTeamDTO } from 'src/dto/NewTeamdto';
 import { TeamDTO } from 'src/dto/teamdto';
 
 /**
@@ -30,7 +29,7 @@ export class UserService extends AbstractService<UserDTO>{
     return this.http.post<any>('http://localhost:8080/' + this.type + '/login', loginDTO)
   }
   
-  NewTeam(TeamDTO: TeamDTO): Observable<TeamDTO>{
+ Team(TeamDTO: TeamDTO): Observable<TeamDTO>{
   return this.http.post<any>('http://localhost:8080'+this.insert + '/insert', TeamDTO )
 }
 }
