@@ -8,6 +8,7 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
 import { TeamsComponent } from './teams/teams.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SecuritypatternsComponent } from './securitypatterns/securitypatterns.component';
+import { TeamUtentiComponent } from './teamutenti/teamutenti.component';
 
 
 /**
@@ -19,7 +20,7 @@ import { SecuritypatternsComponent } from './securitypatterns/securitypatterns.c
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, TeamsComponent, ProjectsComponent, SecuritypatternsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, TeamsComponent, ProjectsComponent, SecuritypatternsComponent, TeamUtentiComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

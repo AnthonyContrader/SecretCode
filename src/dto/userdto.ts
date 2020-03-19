@@ -16,11 +16,11 @@ export class UserDTO {
    username: string;
 
    password: string;
-
+   idt: TeamDTO;
    usertype: Usertype;
    getSearchString() : string{
       return this.id.toString()+this.username+this.password+this.usertype;
    }
-   teamUser: TeamDTO = new TeamDTO();
+   /** teamUser: TeamDTO = new TeamDTO();*/
 }
 

@@ -7,6 +7,7 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
 import { TeamsComponent } from './teams/teams.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SecuritypatternsComponent } from './securitypatterns/securitypatterns.component';
+import{TeamUtentiComponent} from './teamutenti/teamutenti.component'
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
  * appena fa il login viene caricato nel <router-outlet> di app-component il layout e nel 
@@ -26,8 +27,8 @@ const routes: Routes = [
     { path: 'teams', component: TeamsComponent },
     { path: 'projects', component: ProjectsComponent},
     { path: 'securitypatterns', component: SecuritypatternsComponent},
-    { path: 'work-in-progress', component: WorkInProgressComponent}
-   
+    { path: 'work-in-progress', component: WorkInProgressComponent},
+    { path: 'teamutenti', component: TeamUtentiComponent },
 
   ]}
 ];

@@ -32,4 +32,8 @@ export class UserService extends AbstractService<UserDTO>{
  Team(TeamDTO: TeamDTO): Observable<TeamDTO>{
   return this.http.post<any>('http://localhost:8080'+this.insert + '/insert', TeamDTO )
 }
+findByName(nome:string):Observable<any>{
+  return this.http.get<UserDTO>('http://localhost:' + this.port + '/' + this.type + '/findByName?username=' + name);
+}
+
 }

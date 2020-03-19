@@ -3,6 +3,7 @@ import { UserDTO } from 'src/dto/userdto';
 import { TeamDTO } from 'src/dto/teamdto';
 import { ProjectDTO } from 'src/dto/projectdto';
 import { SecuritypatternDTO } from 'src/dto/securitypatterndto';
+import { TeamUtentiDTO } from 'src/dto/teamutenti';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera
@@ -19,7 +20,7 @@ export class AdminDashboardComponent implements OnInit {
   
   team: TeamDTO;
    
-
+  teamUtenti: TeamUtentiDTO;
   project: ProjectDTO;
 
   securitypattern: SecuritypatternDTO;
@@ -31,6 +32,7 @@ export class AdminDashboardComponent implements OnInit {
     this.team = JSON.parse(localStorage.getItem('currentTeam'));
     this.project = JSON.parse(localStorage.getItem('currentProject'));
     this.securitypattern = JSON.parse(localStorage.getItem('currentSecuritypattern'));
+    this.teamUtenti = JSON.parse(localStorage.getItem('currentTeamUtenti'));
   }
 
 }

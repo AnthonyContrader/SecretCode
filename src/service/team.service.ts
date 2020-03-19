@@ -27,4 +27,8 @@ export class TeamService extends AbstractService<TeamDTO>{
     Project(projectDTO: ProjectDTO): Observable<ProjectDTO>{
         return this.http.post<any>('http://localhost:8080'+this.insert + '/insert', ProjectDTO )
       }
+      findByName(nome:string):Observable<any>{
+        return this.http.get<TeamDTO>('http://localhost:' + this.port + '/' + this.type + '/findByName?nometeam=' + nome);
+    }
+      
 }

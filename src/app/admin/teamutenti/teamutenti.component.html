@@ -1,0 +1,59 @@
+<div class="container" >
+  <div class="row mt-5">   
+        <div class="col-lg-12 core">
+          <div class="col-md-1">
+
+          </div>
+          <div class="col-md-10">
+           <table>
+            <td>
+              <button class="btn btn-primary" style="background: #f4cd32; color: black; padding: 1; font-size: 12px;" (click)="findByName(username)">Cerca nome</button>
+            </td>
+            <td> 
+              <input id="id" type="text" class="form-control" name="username" [(ngModel)]="username" style="height: 30px;">  
+            </td>
+            
+            <div class="container">
+              <div class="row mt-5">
+                  <div class="col-md-1">
+           
+                  </div>
+                      <div class="col-md-10">
+                          <table>
+                              <tr>
+                                  <th>Nometeam</th>
+                                  <th>Nomeutente</th>
+                                  <th>Edit</th>
+                                  <th>Team</th>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <input placeholder="nometeam" [(ngModel)]="teamutentitoinsert.nometeam">
+                                  </td>
+                                  <td>
+                                      <input placeholder="username" [(ngModel)]="teamutentitoinsert.username">
+                                  </td>
+                                  
+                                  <td>
+                                      <button (click)="insert(teamutentitoinsert)">Insert</button>
+                                  </td>
+                                  <td>
+                                      <button (click)="clear()">Clear</button>
+                                  </td>
+                              </tr>
+                              <tr *ngFor="let team of teams">
+                                  <td>
+                                      <input [(ngModel)]="teamutenti.nometeam">
+                                  </td>
+                                  
+                                  <td>
+                                      <button (click)="update(teamutenti)">Save</button>
+                                  </td>
+                                  <td>
+                                      <button (click)="delete(teamutenti)">Delete</button>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                    </div>
+                  </div>

@@ -9,6 +9,7 @@
                         <th>Nometeam</th>
                         <th>Descrizione</th>
                         <th>Numeroutenti</th>
+                        <th>id progetto</th>
                         <th>Edit</th>
                         <th>Team</th>
                     </tr>
@@ -21,6 +22,9 @@
                         </td>
                         <td>
                             <input placeholder="numeroutenti" [(ngModel)]="teamtoinsert.numeroutenti">
+                        </td>
+                        <td>
+                            <input placeholder="project_id" [(ngModel)]="teamtoinsert.project_id">  
                         </td>
                         <td>
                             <button (click)="insert(teamtoinsert)">Insert</button>
@@ -40,6 +44,9 @@
                             <input [(ngModel)]="team.numeroutenti">
                         </td>
                         <td>
+                            <input  [(ngModel)]="team.project_id">  
+                        </td>
+                        <td>
                             <button (click)="update(team)">Save</button>
                         </td>
                         <td>
@@ -48,8 +55,48 @@
                     </tr>
                 </table>
             </div>
+          <!--
+            <div class="col-md-10">
+              <h3 style="color:whitesmoke">gestione utenti teams</h3>
+              <table style="color:white">
+                <tr>
+                  <th style="text-align: center;">
+                      Nome
+                   </th>
+                  
+                  <th style="text-align: center;">
+                    in quale team
+                  </th>           
+                </tr>
+                <tr>
+                  <td>
+                    <input placeholder="id" [(ngModel)]="teamtoinsert.id">
+                  </td>
+                  <td>
+                    <input placeholder="idt" [(ngModel)]="teamtoinsert.idt">
+                </td>
+                  <td>
+                    <button (click)="insert(teamtoinsert)">Insert</button>
+                  </td>
+                  <td>
+                    <button (click)="delete(teamtodelete)">Delete</button>
+                  </td>
+                  <td>
+                    <button (click)="clear()" style="padding-left: 12px; padding-right: 10px;">Clear  </button>
+                  </td>
+                </tr>
+                <tr *ngFor="let user of users">
+              <td>
+                      <input [(ngModel)]="user.username">
+                    </td>
+                    <td>
+                      <button (click)="delete(user)">Delete</button>
+                    </td>
+                  </tr>
+                </table>
+            </div>
             <div class="col-md-1"></div>
-
+-->  
         
     </div>
 </div>
