@@ -40,7 +40,7 @@ public class User {
 
 	private Usertype usertype;
 	
-	// verso team
+	// verso teamutenti
 		@ManyToMany(cascade = { CascadeType.ALL })
 	    @JoinTable(name = "user_team", joinColumns = { @JoinColumn(name = "id") }, inverseJoinColumns = { @JoinColumn(name = "idt") })
 		private Set<Team> teamUser = new HashSet<>();

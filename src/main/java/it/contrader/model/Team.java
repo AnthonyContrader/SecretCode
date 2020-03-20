@@ -43,8 +43,8 @@ public class Team {
 	private String numeroteam;
 
 	//verso utente
-	@ManyToMany(mappedBy = "teamUser")
-	private Set<User> users = new HashSet<>();	
+	//@ManyToMany(mappedBy = "teamUser")
+	//private Set<User> users = new HashSet<>();	
 
 	@OneToOne(mappedBy="teamProj")
 	private Project teamProjs;
