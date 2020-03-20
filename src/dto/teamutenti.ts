@@ -5,9 +5,8 @@ import { TeamDTO } from './teamdto';
 export class TeamUtentiDTO{
     
     id: number;
-    idt: TeamDTO;
-    nometeam: TeamDTO;
-    username: UserDTO;
+    nometeam: string;
+    username: string;
    /**teamUser: UserDTO = new UserDTO();
     teamProj: ProjectDTO =new ProjectDTO();*/
 }
